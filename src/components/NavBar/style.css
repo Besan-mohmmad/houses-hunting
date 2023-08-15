@@ -1,0 +1,15 @@
+.btns{
+display: flex;
+
+
+}
+.btn{
+    color: #fff;   
+}
+.bb{
+    background-color: #FFA41B ; 
+    
+}
+.uu{
+    background-color: #fff;
+}
