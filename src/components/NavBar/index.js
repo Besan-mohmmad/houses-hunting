@@ -9,8 +9,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import LogoImage from '../../Utli/image/Blue___Green_Modern_Property_Logo__2_-removebg-preview 1.png'
+// import logo from '../Utli/images/logo.png'
+ 
 import './style.css'
+
 
 const pages = ['Houses', 'AboutUs'];
 const settings = ['Profile', 'Favorite', 'Logout'];
@@ -35,10 +37,10 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static"  >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <Typography
+          <Typography
             variant="h6"
             noWrap
             component="a"
@@ -53,16 +55,8 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            House
-            
-          </Typography> */}
-
-  
-             <img src={LogoImage} alt=""  style={{
-               width:100,
-             }}/>
-         
-
+            <img src='logo'  className='logo'/>
+          </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -116,9 +110,13 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            Hunting
+            <img src='logo' />
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',
+           justifyContent: 'center' , 
+           alignItems: 'center' ,
+           marginLeft: '50px'
+           } }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -131,10 +129,33 @@ function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings" className='btns'>
-              <nav className='bb'><Button className='btn'>Register</Button></nav>
-              <nav className='uu'> <Button className='bt'>Login</Button></nav>
-             
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Button className='btn1'
+                            style={{
+                                color: '#000839',
+                                backgroundColor:'#FFA41B',
+                                marginRight: '20px',
+                                width: '90px',
+                                fontWeight: 'bold',
+                            }}
+                        >
+                            Sign In
+                        </Button>
+                        <Button
+                            variant="contained"
+                            style={{
+                                border: '1px solid #FFA41B ',
+                                backgroundColor:'#fff',
+                                width:'100px',
+                                fontWeight: 'bold',
+                                color:'#000839',
+                                marginRight: '30px'
+                            }}
+                        >
+                            Sign Up
+                        </Button>
+              </IconButton>
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
@@ -165,5 +186,3 @@ function NavBar() {
   );
 }
 export default NavBar;
-
-
