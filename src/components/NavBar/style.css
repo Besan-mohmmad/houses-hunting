@@ -1,15 +1,15 @@
-.btns{
-display: flex;
-
-
+/* .ddd{
+    background-color:#000839;
+} 
+*/
+*{
+    margin: 0;
+    padding: 0;
 }
-.btn{
-    color: #fff;   
+.ddd{
+    background-color: #000839;
+   
 }
-.bb{
-    background-color: #FFA41B ; 
-    
-}
-.uu{
-    background-color: #fff;
+.logo{
+   width: 140px;
 }
