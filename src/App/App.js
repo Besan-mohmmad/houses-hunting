@@ -1,13 +1,13 @@
 import React from 'react';
-import NavBar from '../components/NavBar'
-
+import Layout from '../pages/Layout';
+import Landing from '../pages/Landing';
 
 
 function App() {
   return (
-    <NavBar/>
-
-
+    <Layout className="App">
+    <Landing/>
+    </Layout>
   );
 }
 export default App

@@ -5,13 +5,14 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-// import logo from '../Utli/images/logo.png'
+import logo from '../../Utli/images/logo.png';
+// import img from '../../Utli/images/back.png'
  
-import './style.css'
+import './style.css';
 
 
 const pages = ['Houses', 'AboutUs'];
@@ -37,8 +38,12 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static"  >
-      <Container maxWidth="xl">
+    <AppBar position="static" className='ew'   >
+      {/* <img src={img} className='img' style={{
+        backgroundImage:{img},
+        position:'absolute'
+      }}> */}
+      <Container maxWidth="xl" className='ddd'>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -55,7 +60,7 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            <img src='logo'  className='logo'/>
+            <img src={logo} className='logo'/>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -110,15 +115,22 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            <img src='logo' />
+            <img src={logo} />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',
            justifyContent: 'center' , 
            alignItems: 'center' ,
-           marginLeft: '50px'
+           marginLeft: '50px',
+           color:'#000839'
            } }}>
             {pages.map((page) => (
               <Button
+              style={{
+                // color: 'black',
+                //  fontSize: '20px',
+                 fontWeight:'bold',
+                 marginLeft:'20px'
+            }}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -133,7 +145,7 @@ function NavBar() {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Button className='btn1'
                             style={{
-                                color: '#000839',
+                                color: '#fff',
                                 backgroundColor:'#FFA41B',
                                 marginRight: '20px',
                                 width: '90px',
@@ -145,7 +157,7 @@ function NavBar() {
                         <Button
                             variant="contained"
                             style={{
-                                border: '1px solid #FFA41B ',
+                                // border: '1px solid #FFA41B ',
                                 backgroundColor:'#fff',
                                 width:'100px',
                                 fontWeight: 'bold',
@@ -156,7 +168,9 @@ function NavBar() {
                             Sign Up
                         </Button>
               </IconButton>
+             
             </Tooltip>
+         
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -177,12 +191,17 @@ function NavBar() {
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
+                
               ))}
+                  
             </Menu>
           </Box>
         </Toolbar>
       </Container>
+      
     </AppBar>
   );
 }
 export default NavBar;
+
+
