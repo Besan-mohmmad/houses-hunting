@@ -8,9 +8,8 @@ const Layout = ({children})=> {
 return <>
 <NavBar/>
  {children}
-
-
-
+ {/* <Card/> */}
+{/* <Footer/> */}
 </>
 }
 
