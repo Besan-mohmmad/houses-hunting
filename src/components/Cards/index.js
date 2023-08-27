@@ -1,28 +1,21 @@
 
 import  React from 'react';
 import Cards from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// import image from '../../Utli/images/card.png';
 import HotelIcon from '@mui/icons-material/Hotel';
 import BathtubIcon from '@mui/icons-material/Bathtub';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import{Link} from 'react-router-dom'
 import './style.css';
 
-export default function MediaCard() {
+export default function Card({house}) {
   const [liked, setLiked] = React.useState(false);
-  const { id } = house;
-  const { url } = house;
-  const { address } = house;
-  const { price } = house;
-  const { description } = house;
-  const { bedroom } = house;
-  const { bathroom } = house;
-  const { type } = house;
+  const{  image, address, price,description,bedroom,bathrooms,id} = house;
+
 
   const handleLikeToggle = () => {
     setLiked(!liked);
@@ -30,16 +23,19 @@ export default function MediaCard() {
   return (
 
     <Cards sx={{ maxWidth: 300 }}
-    style={{ marginTop: '20px', }}>
+    style={{ marginTop: '20px',
+    width:'80%',
+    margin:'auto'
+     }}>
       
       {/* <img src={image} className='image'/> */}
       <CardMedia
-        sx={{ height: 160}}
-        image={url}
+        sx={{ height: 200}}
+        image={image}
         // image="/static/images/cards/contemplative-reptile.jpg"
         // title="green iguana"
       />
-          <FavoriteIcon
+          <FavoriteBorderIcon
                         sx={{
                             color: liked ? 'red' : 'white',
                             // border: '1px solid red',
@@ -56,14 +52,14 @@ export default function MediaCard() {
          
       <CardContent>
         <Typography component="div"  >
-          <div className='qq'> <HotelIcon  className='icon'/> <p className='w'>bd { bedroom }</p> <BathtubIcon className='icon'/> <p className='w'>ba { bathroom }</p> </div>
+          <div className='qq'> <HotelIcon  className='icon'/> <p className='w'>bd { bedroom }</p> <BathtubIcon className='icon'/> <p className='w'>ba { bathrooms }</p> </div>
         </Typography>
         <Typography gutterBottom variant="h5" component="div" 
          style={{
                                       
                                       alignItems: 'center',
                                       fontWeight: 'bolder',
-                                      fontSize: '20px',
+                                      fontSize: '17px',
                                       color:'#000839'
                                   }}>
         { address }
@@ -73,7 +69,7 @@ export default function MediaCard() {
                                       
             alignItems: 'center',
             // fontWeight: 'bolder',
-            fontSize: '15px',
+            fontSize: '12px',
             color: '#777'
         }}>
        { description }
@@ -91,27 +87,33 @@ export default function MediaCard() {
             color:'#aaa',
             marginTop:'10px',
             marginRight:'10px'
-          }}>Gaza - Rafah</p> </div>  <p>{ price }</p>
+          }}>Gaza - Rafah</p> </div>  <p style={{
+            color:'#000839'
+          }}>${ price }</p>
         </Typography>
         <Typography  style={{
           display:'flex',
           alignItems:'center',
           justifyContent:'space-between'
           }}>
-        <Button
-                        size="small"
-                        color="primary"
-                        style={{
-                            backgroundColor: '#FFA41B',
-                            color:'#fff',
-                            fontSize: '10px',
-                            width: '50%',
-                            height: '30px',
-
-                        }}
-                    >
-                        More Details 
-                    </Button>
+                              <Button><Link to={`/detailes/${id}`} size="small" color="primary"
+                                style={{
+                                  backgroundColor: '#FFA41B',
+                                  alignItems: 'center',
+                                  fontWeight: 'bolder',
+                                  // fontFamily: 'Istok Web',
+                                  color:'#fff',
+                                  fontSize: '14px',
+                                  textAlign: 'center',
+                                  textDecoration: 'none',
+                                  width: '120px',
+                                  height: '30px',
+                              }}
+                              >More Details</Link></Button>
+                                
+              
+             
+       
                     <FavoriteBorderIcon style={{color:'#aaa'}}/>
         </Typography>
      
