@@ -1,10 +1,11 @@
 import React from 'react';
 
-import {Landing ,Layout,NotFound } from '../pages'
+import {Landing ,Layout, NotFound } from '../pages'
 import { Routes, Route} from 'react-router-dom';
 import Details from '../pages/Details';
 import SignIn from '../pages/SignIn';
 import Filter from '../pages/Filter';
+// import NotFound from '../pages/NotFound';
 
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
         {/* <Route path='/about' element={< About/>}/> */}
         <Route path='/SignIn' element={<SignIn/>} /> 
         <Route path='/Filter' element={<Filter/>}/>
-        <Route path= '*' element={<NotFound/>}/>
+        <Route path="*" element={<NotFound />} />
+
+        {/* <Route exact  path= '*' element={<NotFound/>}/> */}
         
       </Routes>
       {/* <SignIn/> */}
