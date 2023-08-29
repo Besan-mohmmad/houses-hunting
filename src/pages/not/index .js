@@ -1,7 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-// import notfound from "../../Utli/images/404.png.png";
-// import { Button } from '@mui/material';
 
 
 
@@ -9,9 +6,9 @@ import React from 'react';
 const NotFound = () => {
     return (
         <>
-
+<p> not found</p>
      
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+        {/* <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
             <h1 style={{ color: '#1D5D9B', marginBottom: '20px' }}>Page not found</h1>
             <img src={notfound} alt="notfound" style={{ maxWidth: '100%', maxHeight: '300px', margin: '0 auto', marginBottom: '20px' }} />
            
@@ -19,11 +16,12 @@ const NotFound = () => {
                 <Link to='/'>Home</Link>
                 </Button>
             
-        </div>
+        </div> */}
 
         </>
     );
 };
+
 export default NotFound;
 
 
