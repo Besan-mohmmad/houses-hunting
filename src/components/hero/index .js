@@ -72,8 +72,8 @@ export default function BasicCard() {
                             backgroundColor:'#000839',
                             borderRadius: '5px',
                             zIndex:'2',
-                            left:'810px',
-                            bottom:'70px'
+                            left:'900px',
+                            bottom:'200px'
                         }} />
             </Box>
 

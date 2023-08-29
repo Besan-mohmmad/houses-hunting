@@ -10,8 +10,8 @@ const NotFound = () => {
     return (
         <>
 
-        <h1>Aya</h1>
-        {/* <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
+     
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
             <h1 style={{ color: '#1D5D9B', marginBottom: '20px' }}>Page not found</h1>
             <img src={notfound} alt="notfound" style={{ maxWidth: '100%', maxHeight: '300px', margin: '0 auto', marginBottom: '20px' }} />
            
@@ -19,7 +19,7 @@ const NotFound = () => {
                 <Link to='/'>Home</Link>
                 </Button>
             
-        </div> */}
+        </div>
 
         </>
     );

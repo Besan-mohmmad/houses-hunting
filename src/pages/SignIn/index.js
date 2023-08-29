@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import image from '../../Utli/images/login.jpg'
+import image from '../../Utli/images/sign in.avif'
 import './style.css';
+import { Link } from "react-router-dom";
 
 
 function SignIn() {
@@ -52,7 +53,8 @@ function SignIn() {
     
     <div className="container">
       {Object.keys(formErrors).length === 0 && isSubmit ? (
-        <div className="ui message success">Signed in successfully</div>
+        <div className="ui message success"></div>
+      
       ) : (
         <pre>{JSON.stringify()}</pre>
       )}
@@ -60,7 +62,7 @@ function SignIn() {
       <form onSubmit={handleSubmit} className="form">
       < img src={image} className="img"/>
       <diV className="ee">
-        <h1 >Sign in</h1>
+        <h1 className="ss" >Sign in</h1>
         <div className="ui divider"></div>
         <div className="ui form">
         
@@ -70,7 +72,7 @@ function SignIn() {
             <input
               type="text"
               name="email"
-              placeholder="Email..."
+              placeholder="Enter user email..."
               value={formValues.email}
               onChange={handleChange}
               className="ii"
@@ -82,14 +84,14 @@ function SignIn() {
             <input
               type="password"
               name="password"
-              placeholder="Password..."
+              placeholder="Enter the password..."
               value={formValues.password}
               onChange={handleChange}
               className="ii"
             />
           </div>
           <p>{formErrors.password}</p>
-          <button className="fluid ui button blue">Submit</button>
+          <button className="fluid ui button blue"> <Link to='/Portofil' style={{textDecoration:'none',color:'#fff' }}> Submit </Link></button>
         </div>
         </diV>
       </form>
@@ -99,3 +101,7 @@ function SignIn() {
 }
 
 export default SignIn;
+
+
+
+

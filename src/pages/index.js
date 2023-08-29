@@ -1,6 +1,6 @@
 import Layout from "./Layout";
 import Landing from './Landing';
-import NotFound from "./NotFound/index ";
+// import NotFound from "./NotFound";
 // import SignIn from './SignIn';
 // import Filter from './Filter';
 //  import Notfound from './NotFound';
@@ -8,4 +8,4 @@ import NotFound from "./NotFound/index ";
 
 
 
-export {Layout, Landing, NotFound}
+export {Layout, Landing}
