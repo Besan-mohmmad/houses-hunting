@@ -1,20 +1,23 @@
-.form{
+ .form{
     display: flex;
     margin: 15px;
    
 }
 .img{
     width: 50%;
-    height: 500px;
+    height: 600px;
    
 }
 .ee{
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+   /* align-items: center; */
+   padding: 130px;
 }
 .ui{
     display: flex;
     flex-direction: column;
+    gap: 10px;
     
     
 }
@@ -28,4 +31,18 @@
 }
 p {
     color: red;
+  }
+  .fluid {
+    width: 200%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #FFA41B;
+ 
+    border: none;
+   
+  }
+  .ss{
+    /* text-align: center; */
+    margin-left: 120px;
+    color: #000839;
   }

@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import HotelIcon from '@mui/icons-material/Hotel';
 import BathtubIcon from '@mui/icons-material/Bathtub';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Link } from 'react-router-dom';
 
 function Details() {
     const { id } = useParams();
@@ -81,6 +82,21 @@ function Details() {
           }}>Gaza - Rafah</p> </div> ${house.price}
                           </Typography >
                         </Grid>
+                        <Typography >
+                            <button><Link to='/'    style={{
+                                  backgroundColor: '#FFA41B',
+                                  alignItems: 'center',
+                                //   fontWeight: 'bolder',
+                                  // fontFamily: 'Istok Web',
+                                  border:'none',
+                                  color:'#fff',
+                                  fontSize: '14px',
+                                  textAlign: 'center',
+                                  textDecoration: 'none',
+                                  width: '130px',
+                                  height: '30px',
+                              }}>Go Home</Link></button>
+                        </Typography>
                     </Grid>
                 )}
         </Container>
