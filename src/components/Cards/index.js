@@ -35,7 +35,7 @@ export default function Card({house}) {
         // image="/static/images/cards/contemplative-reptile.jpg"
         // title="green iguana"
       />
-          <FavoriteBorderIcon
+          {/* <FavoriteBorderIcon
                         sx={{
                             color: liked ? 'red' : 'white',
                             // border: '1px solid red',
@@ -47,7 +47,7 @@ export default function Card({house}) {
                             fontSize: '30px'
                         }}
                         onClick={handleLikeToggle}
-                    />
+                    /> */}
      
          
       <CardContent>

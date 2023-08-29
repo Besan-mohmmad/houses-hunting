@@ -7,7 +7,7 @@ import SignIn from '../pages/SignIn';
 import Filter from '../pages/Filter';
 // import NotFound from '../pages/NotFound';
 import Portofil from '../pages/Portofil'
-import Search from '../pages/Search'
+
 
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
         <Route path='/Filter' element={<Filter/>}/>
         {/* <Route path="*" element={<NotFound />} /> */}
         <Route path='/Portofil' element={<Portofil/>}/>
-        <Route path='/Search' element={<Search/>}/>
+        
 
         {/* <Route exact  path= '*' element={<NotFound/>}/> */}
         
