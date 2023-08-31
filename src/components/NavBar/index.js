@@ -1,20 +1,31 @@
-import  React from 'react';
+import  React , {useContext, useState }from 'react';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {AppBar ,Box,Toolbar } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-// import MenuItem from '@mui/material/MenuItem';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import Typography from "@mui/material/Typography";
+// import Tooltip from '@mui/material/Tooltip';
+import MenuItem from "@mui/material/MenuItem";
 import Imagelogo from '../../Utli/images/logo.png';
+// import AuthContext from "../Context/AuthContext";
 import{Link} from 'react-router-dom';
 import './style.css'
-//const pages = ['Houses', 'AboutUs'];
-//const settings = ['Profile', 'Favorite', 'Logout'];
-function NavBar() {
+
+const settings = ['Profile', 'Favorite', 'Logout'];
+function NavBar() { 
+//   const { isLoggedIn, setisLoggedIn, logout, setError } =
+// useContext(AuthContext);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [isLoginDialogOpen, setIsLoginDialogOpen] = useState(false);
+  const [isSignDialogOpen, setIsSignDialogOpen] = useState(false);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -27,6 +38,26 @@ function NavBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  // const handellogout = () => {
+  //   try {
+  //     logout();
+  //     Navigate("/");
+  //   } catch (err) {
+  //     setError("iiiii");
+  //   }
+  // };
+
+  const handleLoginClick = () => {
+    setIsLoginDialogOpen(true);
+  };
+  const handleSignClick = () => {
+    setIsSignDialogOpen(true);
+  };
+  
+  // const handleprofile =() => {
+  //   navigator("/Portofil");
+  // };
   return (
     <AppBar position="static" style={{
       backgroundColor:' #000839'
@@ -63,42 +94,10 @@ function NavBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))} */}
+          
             </Menu>
           </Box>
-          {/* <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none'},
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Hunting
-          </Typography> */}
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent:'center' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block',textTransform:'capitalize' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box> */}
+          
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent:'center' } }}>
               <Button
                 onClick={handleCloseNavMenu}
@@ -118,7 +117,7 @@ function NavBar() {
             </Button>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            {/* <Tooltip title="Open settings"> */}
+           
             
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Button variant="contained" style={{
@@ -134,34 +133,62 @@ function NavBar() {
                 marginRight:'5px',
                 marginLeft:'5px',
                 textTransform:'capitalize'
-              }}>Sign up</Button>
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+              }}> <Link to='/Register' style={{textDecoration:'none', color:'#000839',}}>Register</Link></Button>
+               
               </IconButton>
              
-            {/* </Tooltip> */}
-         
+{/*        
+            {isLoggedIn ? (
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar
+                    className="avatar-profile"
+                    alt="Bisan"
+                    src="/static/images/avatar/2.jpg"
+                  />
+                </IconButton>
+              </Tooltip> */}
             {/* <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            > */}
-              {/* {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))} */}
-            {/* </Menu> */}
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              > */}
+                {/* <section className="section-profile">
+                  <Button>
+                    <Link className="nav-profile" to="/Profile">
+                      Profile
+                    </Link>
+                  </Button>
+                  <Button>
+                    <Link className="nav-profile" onClick={handellogout}>
+                      log out
+                    </Link>
+                  </Button>
+                </section>
+              </Menu> */}
+            {/* </Box> */}
+          {/* // ) : (
+          //   <section className="header-right">
+          //     <button className="login-btn" onClick={handleLoginClick}>
+          //       SignIn
+          //     </button>
+          //     <button className="signup-btn" onClick={handleSignClick}>
+          //       SignUp
+          //     </button>
+          //   </section> */}
+          {/* // )} */}
           </Box>
         </Toolbar>
       </Container>
@@ -169,5 +196,8 @@ function NavBar() {
   );
 }
 export default NavBar;
+
+
+
 
 

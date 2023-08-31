@@ -7,8 +7,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import image from '../../Utli/images/Heroo.png'
 import SearchIcon from '@mui/icons-material/Search';
-// import{Link} from 'react-router-dom'
+import{Link} from 'react-router-dom'
 import { useNavigate } from "react-router-dom";
+
 
 const bull = (
   <Box
@@ -75,7 +76,9 @@ export default function BasicCard() {
                             left:'900px',
                             bottom:'200px'
                         }} />
+                        
             </Box>
+            {/* <button><Link to='/Portofil'>start</Link></button> */}
 
             </div>
         </div>
