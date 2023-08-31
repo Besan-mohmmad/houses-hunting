@@ -28,31 +28,19 @@ export default function Card({house}) {
     margin:'auto'
      }}>
       
-      {/* <img src={image} className='image'/> */}
+      <Card className="image">
       <CardMedia
         sx={{ height: 200}}
         image={image}
-        // image="/static/images/cards/contemplative-reptile.jpg"
-        // title="green iguana"
-      />
-          {/* <FavoriteBorderIcon
-                        sx={{
-                            color: liked ? 'red' : 'white',
-                            // border: '1px solid red',
-                            // borderRadius: '50%',
-                            position: 'absolute',
-                            top: '13px',
-                            right: '17px',
-                            zIndex: 1,
-                            fontSize: '30px'
-                        }}
-                        onClick={handleLikeToggle}
-                    /> */}
+        style={{
+       
+        }}
+       ></CardMedia></Card>
      
          
       <CardContent>
         <Typography component="div"  >
-          <div className='qq'> <HotelIcon  className='icon'/> <p className='w'>bd { bedroom }</p> <BathtubIcon className='icon'/> <p className='w'>ba { bathrooms }</p> </div>
+          <div className='icons'> <HotelIcon  className='icon'/> <p className='ba'>bd { bedroom }</p> <BathtubIcon className='icon'/> <p className='ba'>ba { bathrooms }</p> </div>
         </Typography>
         <Typography gutterBottom variant="h5" component="div" 
          style={{

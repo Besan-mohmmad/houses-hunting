@@ -39,14 +39,7 @@ function NavBar() {
     setAnchorElUser(null);
   };
 
-  // const handellogout = () => {
-  //   try {
-  //     logout();
-  //     Navigate("/");
-  //   } catch (err) {
-  //     setError("iiiii");
-  //   }
-  // };
+ 
 
   const handleLoginClick = () => {
     setIsLoginDialogOpen(true);
@@ -54,10 +47,7 @@ function NavBar() {
   const handleSignClick = () => {
     setIsSignDialogOpen(true);
   };
-  
-  // const handleprofile =() => {
-  //   navigator("/Portofil");
-  // };
+
   return (
     <AppBar position="static" style={{
       backgroundColor:' #000839'
@@ -137,58 +127,8 @@ function NavBar() {
                
               </IconButton>
              
-{/*        
-            {isLoggedIn ? (
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar
-                    className="avatar-profile"
-                    alt="Bisan"
-                    src="/static/images/avatar/2.jpg"
-                  />
-                </IconButton>
-              </Tooltip> */}
-            {/* <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              > */}
-                {/* <section className="section-profile">
-                  <Button>
-                    <Link className="nav-profile" to="/Profile">
-                      Profile
-                    </Link>
-                  </Button>
-                  <Button>
-                    <Link className="nav-profile" onClick={handellogout}>
-                      log out
-                    </Link>
-                  </Button>
-                </section>
-              </Menu> */}
-            {/* </Box> */}
-          {/* // ) : (
-          //   <section className="header-right">
-          //     <button className="login-btn" onClick={handleLoginClick}>
-          //       SignIn
-          //     </button>
-          //     <button className="signup-btn" onClick={handleSignClick}>
-          //       SignUp
-          //     </button>
-          //   </section> */}
-          {/* // )} */}
+       
+          
           </Box>
         </Toolbar>
       </Container>
