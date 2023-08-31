@@ -65,7 +65,7 @@ function Filter() {
       <div className="herosearchpage">
         <form className="searchhh" onSubmit={handleSearch}>
           <button className="serach-btn " style={{ cursor: "pointer" }}>
-            <SearchIcon className="searchicon"></SearchIcon>Search
+            Search
           </button>
           <input
             className="hero-searchInput"

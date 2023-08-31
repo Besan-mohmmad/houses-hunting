@@ -83,18 +83,20 @@ function Details() {
                           </Typography >
                         </Grid>
                         <Typography >
-                            <button><Link to='/'    style={{
-                                  backgroundColor: '#FFA41B',
+                            <button style={{border:'none',
+                             width: '120px',
+                             height: '30px',
+                             backgroundColor: '#FFA41B',
+                             marginBottom:'20px'
+                        }}><Link to='/'    style={{
+                                  
                                   alignItems: 'center',
-                                //   fontWeight: 'bolder',
-                                  // fontFamily: 'Istok Web',
-                                  border:'none',
                                   color:'#fff',
                                   fontSize: '14px',
                                   textAlign: 'center',
                                   textDecoration: 'none',
-                                  width: '130px',
-                                  height: '30px',
+                                // padding:'10px',
+                                fontWeight: 'bolder',
                               }}>Go Home</Link></button>
                         </Typography>
                     </Grid>
